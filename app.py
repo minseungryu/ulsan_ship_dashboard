@@ -7,10 +7,10 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from pred2 import predict_ship_waiting_time 
-from home import about_service
-from eda import ulsan_eda
-from data import show_data
+from pages.pred2 import predict_ship_waiting_time 
+from pages.home import about_service
+from pages.eda import ulsan_eda
+from pages.data import show_data
 
 import warnings
 warnings.filterwarnings('ignore')

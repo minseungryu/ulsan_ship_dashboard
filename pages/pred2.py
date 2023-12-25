@@ -41,7 +41,7 @@ def predict_ship_waiting_time():
                 service_time = st.number_input('필요한 서비스 시간(분)', value= avg_service_time)
             with col2:
                 st.subheader('접안 예정 부두(계선장소)')
-                place_name = pd.read_csv('../data/place_name_mapping.csv')
+                place_name = pd.read_csv('./data/place_name_mapping.csv')
                 selected_place = st.selectbox('계선장소 선택', place_name['계선장소명'])
                 encoded_place = place_name[place_name['계선장소명'] == selected_place]['계선장소명_encoded'].values[0]
 
@@ -73,7 +73,7 @@ def predict_ship_waiting_time():
             st.subheader('🚢 선박 정보')
             st.markdown('① 호출부호(선박 고유 ID)를 선택하세요')
             ## 호출부호 인코딩값 매핑데이터
-            ship_name = pd.read_csv('../data/ship_name_mapping.csv')
+            ship_name = pd.read_csv('./data/ship_name_mapping.csv')
             selected_ship = st.selectbox('', ship_name['호출부호'])
             encoded_ship = ship_name[ship_name['호출부호'] == selected_ship]['호출부호_encoded'].values[0]
             ship_service_time = df[df['호출부호_encoded'] == encoded_ship]['선박_연평균_서비스시간'].values[0]

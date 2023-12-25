@@ -101,5 +101,5 @@ def ulsan_eda():
         st.plotly_chart(fig)
         st.divider()
         st.markdown('▶︎ 상위 3개의 부두의 주요 취급 화물이 액체화물(연료, 화학물질 등)')
-        st.image('../data/budu.png', width=500)
+        st.image('./data/budu.png', width=500)
         

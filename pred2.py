@@ -34,22 +34,22 @@ def predict_ship_waiting_time():
     st.divider()
     container2 = st.container()
     with container2:
-            col1, col2 = st.columns(2)
-            with col1:
-                st.subheader('서비스(양적하) 소요 시간')
-                avg_service_time = df['선박_연평균_서비스시간'].mean()
-                service_time = st.number_input('필요한 서비스 시간(분)', value= avg_service_time)
-            with col2:
-                st.subheader('접안 예정 부두(계선장소)')
-                place_name = pd.read_csv('./data/place_name_mapping.csv')
-                selected_place = st.selectbox('계선장소 선택', place_name['계선장소명'])
-                encoded_place = place_name[place_name['계선장소명'] == selected_place]['계선장소명_encoded'].values[0]
+        col1, col2 = st.columns(2)
+        with col1:
+            st.subheader('서비스(양적하) 소요 시간')
+            avg_service_time = df['선박_연평균_서비스시간'].mean()
+            service_time = st.number_input('필요한 서비스 시간(분)', value= avg_service_time)
+        with col2:
+            st.subheader('접안 예정 부두(계선장소)')
+            place_name = pd.read_csv('./data/place_name_mapping.csv')
+            selected_place = st.selectbox('계선장소 선택', place_name['계선장소명'])
+            encoded_place = place_name[place_name['계선장소명'] == selected_place]['계선장소명_encoded'].values[0]
 
-                place_avg_ton = df[df['계선장소명_encoded'] == encoded_place]['시설연평균_재화중량톤수'].values[0]
-                st.markdown(f'▶︎ {selected_place} :green[**연평균 재화중량톤수**]는 **{round(place_avg_ton, 2)}톤** 이며,')
+            place_avg_ton = df[df['계선장소명_encoded'] == encoded_place]['시설연평균_재화중량톤수'].values[0]
+            st.markdown(f'▶︎ {selected_place} :green[**연평균 재화중량톤수**]는 **{round(place_avg_ton, 2)}톤** 이며,')
 
-                place_avg_cnt = df[df['계선장소명_encoded'] == encoded_place]['연평균_총입항건수'].values[0]
-                st.markdown(f'▶︎ 해당 선석의 :green[**연평균 총 입항 건 수**]는, **{int(place_avg_cnt)}건** 입니다.')
+            place_avg_cnt = df[df['계선장소명_encoded'] == encoded_place]['연평균_총입항건수'].values[0]
+            st.markdown(f'▶︎ 해당 선석의 :green[**연평균 총 입항 건 수**]는, **{int(place_avg_cnt)}건** 입니다.')
 
     st.divider()
     container3 = st.container()
@@ -67,7 +67,7 @@ def predict_ship_waiting_time():
                     col,
                     min_value = min_val, max_value = max_val, value = round(average_value, 2)
                 )
-            weather_data.append(float(weather_value))
+                weather_data.append(float(weather_value))
 
         
         with col2:

@@ -23,7 +23,7 @@ def main():
         about_service()
 
     if selected_menu == "Prediction":
-        predict_ship_waiting_time()  # pred.py의 함수 호출
+        predict_ship_waiting_time()  
 
     if selected_menu == 'EDA':
         ulsan_eda()

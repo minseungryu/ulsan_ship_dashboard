@@ -59,15 +59,28 @@ def predict_ship_waiting_time():
             st.subheader('🌊 기상 상태')
             weather_data = []
             weather_columns = ['풍속', '풍향', 'GUST풍속', '현지기압', '습도', '기온', '수온', '최대파고', '유의파고', '평균파고', '파주기', '파향']
+            # for col in weather_columns:
+            #     average_value = df[col].mean()
+            #     min_val = min(df[col])
+            #     max_val = max(df[col])
+            #     weather_value = st.slider(
+            #         col,
+            #         min_value = min_val, max_value = max_val, value = round(average_value, 2)
+            #     )
+            #     weather_data.append(float(weather_value))
             for col in weather_columns:
-                average_value = df[col].mean()
-                min_val = min(df[col])
-                max_val = max(df[col])
-                weather_value = st.slider(
-                    col,
-                    min_value = min_val, max_value = max_val, value = round(average_value, 2)
-                )
-                weather_data.append(float(weather_value))
+                try:
+                    average_value = df[col].mean()
+                    min_val = min(df[col])
+                    max_val = max(df[col])
+                    weather_value = st.slider(
+                        col,
+                        min_value=min_val, max_value=max_val, value=round(average_value, 2)
+                    )
+                    weather_data.append(float(weather_value))  # 데이터 유형을 숫자로 변환
+                except KeyError:
+                    st.warning(f"열 '{col}'를 찾을 수 없습니다.")
+                    weather_data.append(None)  # 열이 없을 경우 None을 추가
         
         with col2:
             st.subheader('🚢 선박 정보')

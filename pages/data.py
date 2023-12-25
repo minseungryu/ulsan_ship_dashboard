@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 def show_data():
-    df = pd.read_csv('../data/for_ship_model.csv')
+    df = pd.read_csv('./data/for_ship_model.csv')
     st.subheader('Filtering Options')
     st.markdown('울산항의 3년 데이터(2020~2022)를 확인해보세요.')
     col1, col2, col3 = st.columns(3)

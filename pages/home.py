@@ -10,7 +10,7 @@ def about_service():
     st.header('⛴️' + ' 울산항 선박 대기시간 예측 서비스')
     st.markdown('본 서비스는 **PORT-MIS**를 기반으로 **울산항 선박 대기시간**에 영향을 미치는 다양한 지표를 분석하여\n**분 단위 대기시간 예측**을 제공합니다.')
     # 이미지
-    st.image("../data/ulsan.jpeg", width = 800) #use_column_width=True
+    st.image("./data/ulsan.jpeg", width = 800) #use_column_width=True
     # st.markdown('여기에 소개쓰기, 두개 컬럼')
 
     st.divider()

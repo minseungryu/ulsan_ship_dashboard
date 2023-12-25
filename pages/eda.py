@@ -11,7 +11,7 @@ from sklearn.cluster import KMeans
 import plotly.figure_factory as ff
 
 def ulsan_eda():
-    df = pd.read_csv('../data/울산_전처리_ver7.csv')
+    df = pd.read_csv('./data/울산_전처리_ver7.csv')
     color_scale = px.colors.qualitative.Pastel
 
     st.header('울산항 3개년 입출항 현황을 확인해보세요')

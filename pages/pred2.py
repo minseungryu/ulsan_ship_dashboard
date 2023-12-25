@@ -8,10 +8,10 @@ os.environ['DYLD_LIBRARY_PATH'] = '/angela/local/opt/libomp/lib'
 
 def predict_ship_waiting_time():
     # 모델 불러오기
-    model = joblib.load("../models/model.pkl")
+    model = joblib.load("./models/model.pkl")
 
     # 데이터 프레임 불러오기
-    df = pd.read_csv('../data/for_ship_model.csv')
+    df = pd.read_csv('./data/for_ship_model.csv')
 
     # main text
     st.header('🔎  선박 대기시간 예측 서비스 - 상세') 

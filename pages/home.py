@@ -25,4 +25,4 @@ def about_service():
 
     with col2:
         st.subheader('선박 입출항 프로세스')
-        st.image("./data/process.png",use_column_width=True)
+        st.image("/Users/angela/ulsan_ship_dashboard/data/process.png",use_column_width=True)

@@ -63,10 +63,10 @@ def predict_ship_waiting_time():
                 average_value = df[col].mean()
                 min_val = min(df[col])
                 max_val = max(df[col])
-                weather_value = st.slider(
+                weather_value = float(st.slider(
                     col,
                     min_value = min_val, max_value = max_val, value = round(average_value, 2)
-                )
+                ))
                 weather_data.append(round(weather_value, 2))
         
         with col2:

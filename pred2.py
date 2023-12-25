@@ -68,7 +68,6 @@ def predict_ship_waiting_time():
                     min_value = min_val, max_value = max_val, value = round(average_value, 2)
                 )
                 weather_data.append(float(weather_value))
-
         
         with col2:
             st.subheader('🚢 선박 정보')
@@ -99,19 +98,6 @@ def predict_ship_waiting_time():
                 ship_info_data.append(number)
 
     st.divider()
-
-    # if st.button('예측하기'):
-    #     # 모델 입력 데이터 준비
-    #     input_data = np.array(date_data + [service_time] + ship_info_data + weather_data + [place_avg_ton, place_avg_cnt, ship_service_time, encoded_ship, encoded_place, encoded_usage]).reshape(1, -1)
-
-    #     # 모델 예측
-    #     prediction = model.predict(input_data)
-
-    #     # 예측 결과 출력
-    #     # st.subheader('예측 결과')
-    #     st.subheader(f'👉 선박 대기 :red[{int(prediction[0])}]분 예상')
-    
-    # import streamlit as st
 
     # 예측하기 버튼
     if st.sidebar.button('예측하기'):

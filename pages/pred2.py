@@ -84,7 +84,7 @@ def predict_ship_waiting_time():
 
             ## 선박용도 인코딩값 매핑
             st.markdown('② 선박용도를 선택하세요')
-            usage_name = pd.read_csv('../data/usage_name_mapping.csv')
+            usage_name = pd.read_csv('./data/usage_name_mapping.csv')
             selected_usage = st.selectbox('', usage_name['선박용도'])
             encoded_usage = usage_name[usage_name['선박용도'] == selected_usage]['선박용도_encoded'].values[0]
 

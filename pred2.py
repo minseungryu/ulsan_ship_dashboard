@@ -67,7 +67,7 @@ def predict_ship_waiting_time():
                     col,
                     min_value = min_val, max_value = max_val, value = round(average_value, 2)
                 )
-                weather_data.append(float(weather_value))
+                weather_data.append(round(weather_value, 2))
         
         with col2:
             st.subheader('🚢 선박 정보')
